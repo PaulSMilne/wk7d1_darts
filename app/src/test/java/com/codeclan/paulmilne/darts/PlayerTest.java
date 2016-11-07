@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 /**
- * Created by user on 07/11/2016.
+ * Created by Paul Milne on 07/11/2016.
  */
 
 public class PlayerTest {
