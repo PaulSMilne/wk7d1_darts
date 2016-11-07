@@ -67,4 +67,13 @@ public class RankingTest {
         assertEquals("Tricky", thisPlayer.getNickname());
 
     }
+
+    @Test
+    public void canGetPlayerByName(){
+        leaderboard.addPlayer(player8);
+        leaderboard.addPlayer(player9);
+        leaderboard.addPlayer(player10);
+        Player thisPlayer = leaderboard.getPlayerByName("Freyr Njörđrson");
+        assertEquals(9, thisPlayer.getRank());
+    }
 }

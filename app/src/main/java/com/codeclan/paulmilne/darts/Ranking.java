@@ -40,4 +40,12 @@ public class Ranking {
         player.setRank(rank);
         leaderboard.set(index, player);
     }
+    public Player getPlayerByName(String findName){
+        for (Player player : leaderboard){
+            if (player.name == findName) {
+                return player;
+            }
+        }
+        return null;
+    }
 }
