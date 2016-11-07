@@ -5,4 +5,41 @@ package com.codeclan.paulmilne.darts;
  */
 
 public class Player {
+
+    private String name;
+    private String nickname;
+    private int rank;
+
+    public Player(String name, String nickname, int rank) {
+        this.name = name;
+        this.nickname = nickname;
+        this.rank = rank;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public String setName(String newName){
+        this.name = newName;
+        return this.name;
+    }
+
+    public String getNickname(){
+        return this.nickname;
+    }
+
+    public String setNickname(String newNickname){
+        this.name = newNickname;
+        return this.name;
+    }
+
+    public int getRank(){
+        return this.rank;
+    }
+
+    public int setRank(int newRank){
+        this.rank = newRank;
+        return this.rank;
+    }
 }
