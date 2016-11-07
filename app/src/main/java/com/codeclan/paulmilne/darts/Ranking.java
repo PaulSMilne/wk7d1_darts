@@ -34,4 +34,10 @@ public class Ranking {
         }
         return null;
     }
+
+    public void replaceLastPlayer(Player player, int rank){
+        int index = rank-1;
+        player.setRank(rank);
+        leaderboard.set(index, player);
+    }
 }

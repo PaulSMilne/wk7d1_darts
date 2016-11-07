@@ -10,10 +10,10 @@ public class Player {
     public String nickname;
     public int rank;
 
-    public Player(String name, String nickname) {
+    public Player(String name, String nickname, int rank) {
         this.name = name;
         this.nickname = nickname;
-        this.rank = 0;
+        this.rank = rank;
     }
 
     public String getName(){

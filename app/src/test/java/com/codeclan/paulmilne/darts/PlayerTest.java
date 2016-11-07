@@ -11,7 +11,7 @@ public class PlayerTest {
 
     @Before
     public void before (){
-        player = new Player("Fred Fredssonn", "Bullseye");
+        player = new Player("Fred Fredssonn", "Bullseye", 1);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class PlayerTest {
 
     @Test
     public void canGetRank(){
-        assertEquals(0, player.getRank());
+        assertEquals(1, player.getRank());
     }
 
     @Test
@@ -49,7 +49,7 @@ public class PlayerTest {
 
     @Test
     public void canOutputDetailsToString(){
-        player.setRank(1);
+        //player.setRank(1);
         String details = player.toString();
         assertEquals("Name: Fred Fredssonn, Nickname: 'Bullseye', Ranking: 1.", details);
     }
