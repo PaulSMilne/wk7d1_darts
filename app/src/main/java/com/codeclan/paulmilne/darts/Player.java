@@ -38,8 +38,13 @@ public class Player {
         return this.rank;
     }
 
-    public int setRank(int newRank){
+    public int setRank(int newRank) {
         this.rank = newRank;
         return this.rank;
+    }
+    //Custom toString method
+
+    public String toString(){
+        return "Name: " + this.name + ", Nickname: '" + this.nickname + "', Ranking: " + this.rank + ".";
     }
 }

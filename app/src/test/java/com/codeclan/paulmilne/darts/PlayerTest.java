@@ -46,4 +46,10 @@ public class PlayerTest {
         player.setRank(2);
         assertEquals(2, player.getRank());
     }
+
+    @Test
+    public void canOutputDetailsToString(){
+        String details = player.toString();
+        assertEquals("Name: Fred Fredssonn, Nickname: 'Bullseye', Ranking: 1.", details);
+    }
 }
