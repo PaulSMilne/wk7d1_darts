@@ -6,14 +6,14 @@ package com.codeclan.paulmilne.darts;
 
 public class Player {
 
-    private String name;
-    private String nickname;
-    private int rank;
+    public String name;
+    public String nickname;
+    public int rank;
 
-    public Player(String name, String nickname, int rank) {
+    public Player(String name, String nickname) {
         this.name = name;
         this.nickname = nickname;
-        this.rank = rank;
+        this.rank = 0;
     }
 
     public String getName(){

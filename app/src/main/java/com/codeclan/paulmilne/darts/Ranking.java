@@ -10,9 +10,28 @@ public class Ranking {
     private ArrayList<Player> leaderboard;
 
     public Ranking(){
+        this.leaderboard = new ArrayList<Player>();
 
     }
 
+    public ArrayList<Player> getLeaderboard() {
+        return this.leaderboard;
+    }
 
+    public int countPlayers(){
+        return leaderboard.size();
+    }
 
+    public void addPlayer(Player player){
+        leaderboard.add(player);
+    }
+
+    public Player getPlayerWithRanking(int ranking){
+        for (Player player : leaderboard){
+            if (player.rank == ranking) {
+               return player;
+            }
+        }
+        return null;
+    }
 }
