@@ -18,6 +18,10 @@ public class Ranking {
         return this.leaderboard;
     }
 
+    public Player getPlayerByIndex(int index){
+        return leaderboard.get(index);
+    }
+
     public int countPlayers(){
         return leaderboard.size();
     }
@@ -47,5 +51,29 @@ public class Ranking {
             }
         }
         return null;
+    }
+
+    public void moveUp(Player player){
+        int currentRank = player.rank;
+        Player playerDown = getPlayerWithRanking(currentRank-1);
+        int newRank = currentRank-1;
+        player.setRank(newRank);
+        playerDown.setRank(currentRank);
+        int downIndex = newRank-1;
+        int upIndex = currentRank-1;
+
+        Collections.swap(leaderboard, downIndex, upIndex);
+    }
+
+    public void moveDown(Player player){
+        int currentRank = player.rank;
+        Player playerUp = getPlayerWithRanking(currentRank+1);
+        int newRank = currentRank+1;
+        player.setRank(newRank);
+        playerUp.setRank(currentRank);
+        int downIndex = newRank-1;
+        int upIndex = currentRank-1;
+
+        Collections.swap(leaderboard, downIndex, upIndex);
     }
 }

@@ -11,3 +11,7 @@ Monday evening, 2300. It's taken me all evening but I've managed to do the MVP. 
 I'll have a quick look at finding a player by their name as I think it's similar to the rather clunky way I returned the player by their rank.
 
 Okay, I've managed to do that as well, so chuffed. I'll take a quick look at the last item but won't spend too long trying to work it out.
+
+Okay, I got hooked and did the methods for moving players up and down the rankings. 
+
+Job done.

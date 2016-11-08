@@ -18,6 +18,7 @@ public class RankingTest {
     Player player8;
     Player player9;
     Player player10;
+    Player player11;
     Ranking leaderboard;
 
     @Before
@@ -33,47 +34,67 @@ public class RankingTest {
         player8 = new Player("Freyja Njörđrdottir", "Feathers",8);
         player9 = new Player("Freyr Njörđrson", "Sexy",9);
         player10 = new Player("Njörđr Njörđrson", "Tricky",10);
+        player11 = new Player("Paul Milne", "Wonky", 11);
+        leaderboard.addPlayer(player1);
+        leaderboard.addPlayer(player2);
+        leaderboard.addPlayer(player3);
+        leaderboard.addPlayer(player4);
+        leaderboard.addPlayer(player5);
+        leaderboard.addPlayer(player6);
+        leaderboard.addPlayer(player7);
+        leaderboard.addPlayer(player8);
+        leaderboard.addPlayer(player9);
+        leaderboard.addPlayer(player10);
 
     }
 
     @Test
     public void canCountPlayers(){
         int count = leaderboard.countPlayers();
-        assertEquals(0, count);
+        assertEquals(10, count);
     }
 
     @Test
     public void canAddPlayersToLeaderboard() {
-        leaderboard.addPlayer(player1);
-        assertEquals(1, leaderboard.countPlayers());
+        leaderboard.addPlayer(player11);
+        assertEquals(11, leaderboard.countPlayers());
     }
 
     @Test
     public void canGetPlayerWithRanking(){
-        leaderboard.addPlayer(player1);
-        leaderboard.addPlayer(player2);
-        leaderboard.addPlayer(player3);
         Player thisPlayer = leaderboard.getPlayerWithRanking(2);
         assertEquals("Strongarm", thisPlayer.getNickname());
     }
 
     @Test
     public void canReplaceLastPlayer(){
-        leaderboard.addPlayer(player1);
-        leaderboard.addPlayer(player2);
-        leaderboard.addPlayer(player3);
-        leaderboard.replaceLastPlayer(player4, 3);
-        Player thisPlayer = leaderboard.getPlayerWithRanking(3);
-        assertEquals("Tricky", thisPlayer.getNickname());
+       leaderboard.replaceLastPlayer(player11, 10);
+        Player thisPlayer = leaderboard.getPlayerWithRanking(10);
+        assertEquals("Wonky", thisPlayer.getNickname());
 
     }
 
     @Test
     public void canGetPlayerByName(){
-        leaderboard.addPlayer(player8);
-        leaderboard.addPlayer(player9);
-        leaderboard.addPlayer(player10);
         Player thisPlayer = leaderboard.getPlayerByName("Freyr Njörđrson");
         assertEquals(9, thisPlayer.getRank());
+    }
+
+    @Test
+    public void canMovePlayerUp(){
+        leaderboard.moveUp(player7);
+        Player playerUp = leaderboard.getPlayerByIndex(5);
+        Player playerDown = leaderboard.getPlayerByIndex(6);
+        assertEquals("Grumpy", playerUp.getNickname());
+        assertEquals("Dreamer", playerDown.getNickname());
+    }
+
+    @Test
+    public void canMovePlayerDown(){
+        leaderboard.moveDown(player7);
+        Player playerUp = leaderboard.getPlayerByIndex(6);
+        Player playerDown = leaderboard.getPlayerByIndex(7);
+        assertEquals("Feathers", playerUp.getNickname());
+        assertEquals("Grumpy", playerDown.getNickname());
     }
 }
